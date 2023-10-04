@@ -29,7 +29,28 @@ const cartSlice = createSlice({
                 state.totalQuantity++;
             }
         },
-        removeFromCart(){},
+        removeFromCart(state,action){
+            const itemByid = action.payload;
+            const existingItem = state.itemList.find(item=>item.id === itemByid.id);
+            console.log(existingItem,'remove test')
+            if(existingItem){
+                existingItem.quantity--;
+                console.log(existingItem.totalPrice);
+                existingItem.totalPrice = existingItem.totalPrice - itemByid.price;
+                const findId = state.itemList.findIndex(item=>item.id === itemByid.id)
+
+                console.log(state.itemList[findId].quantity,'state.itemList.quantity')
+                if(state.itemList.quantity === 0){
+                    state.itemList.splice(findId,1);
+                }
+            }
+            
+
+        },
+        showCart(state){
+            state.showCart = !state.showCart;
+            console.log('showcart',state.showCart)
+        }
     }
 })
 

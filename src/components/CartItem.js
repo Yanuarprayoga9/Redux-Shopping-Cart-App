@@ -5,7 +5,7 @@ import { cartActions } from "./../store/cart-slice";
 const CartItem = ({ name, quantity, total, price, id }) => {
   const dispatch = useDispatch();
   const removeHandler = () => {
-    dispatch(cartActions.removeFromCart(id));
+    dispatch(cartActions.removeFromCart({id,price}));
   };
   const addHandler = () => {
     dispatch(
