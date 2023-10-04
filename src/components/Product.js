@@ -3,18 +3,17 @@ import "./Product.css";
 import { useDispatch, useSelector } from "react-redux";
 import { cartActions } from "../store/cart-slice";
 const Product = ({ name, id, imgURL, price }) => {
- 
-  const dispatch =  useDispatch();
+  const dispatch = useDispatch();
   const addToCart = () => {
-    dispatch(cartActions.addToCart({
-      id,
-      name,
-      price
-
-    }))
-  }
+    dispatch(
+      cartActions.addToCart({
+        id,
+        name,
+        price,
+      })
+    );
+  };
   return (
-
     <div className="card">
       <img src={imgURL} alt={name} />
       <h2>{name}</h2>
