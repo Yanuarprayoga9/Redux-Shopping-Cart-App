@@ -13,10 +13,7 @@ const Auth = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('id',id)
-    console.log('user id',user.id)
     const same = parseInt(id) === user.id && parseInt(password) === user.password ;
-    console.log(same)
     if(same){
       dispatch(authActions.login());
     }

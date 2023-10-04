@@ -33,7 +33,6 @@ const cartSlice = createSlice({
             const existingItem = state.itemList.find(item=>item.id === itemByid.id);
             if(existingItem){
                 existingItem.quantity--;
-                console.log(existingItem.totalPrice);
                 existingItem.totalPrice = existingItem.totalPrice - itemByid.price;
                 const findId = state.itemList.findIndex(item=>item.id === itemByid.id)
                         if(state.itemList[findId].quantity === 0){
@@ -49,7 +48,6 @@ const cartSlice = createSlice({
         },
         showCart(state){
             state.showCart = !state.showCart;
-            console.log('showcart',state.showCart)
         }
     }
 })

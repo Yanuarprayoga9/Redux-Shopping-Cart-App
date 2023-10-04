@@ -7,7 +7,6 @@ import { useSelector } from "react-redux";
 const Layout = () => {
   let total = 100;
   const showCart = useSelector(state => state.cart.showCart);
-  console.log('layout showcart',showCart)
   return (
     <React.Fragment>
       <div className="layout">
