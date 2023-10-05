@@ -2,10 +2,10 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   isLoggedIn: false,
-  user : {
-    id:1,
-    password:1234
-  }
+  user: {
+    id: 1,
+    password: 1234,
+  },
 };
 const authSlice = createSlice({
   name: "auth",
@@ -19,6 +19,7 @@ const authSlice = createSlice({
     },
   },
 });
+
 
 export const authActions = authSlice.actions;
 export default authSlice;
